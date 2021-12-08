@@ -7,6 +7,16 @@ const form_checkbox_input = document.querySelector('.form-checkbox__input');
 const circle_fifth = document.querySelector('.circle-fifth');
 const notification = document.querySelector('.notification');
 const site_container_content = document.querySelector('.site-container__content');
+const field_inputs = document.querySelectorAll('.field__input');
+const field_labels = document.querySelectorAll('.field__label');
+
+field_inputs.forEach(field_input => {
+  field_input.addEventListener('click', labelHidden);
+
+  function labelHidden () {
+    field_input.closest('.contact-form__field').querySelector('.field__label').classList.add('field__label--mobile');
+  }
+})
 
 const contact_form_inputs = contact_form.querySelectorAll('.form__input-required');
 
@@ -70,6 +80,7 @@ function contactFormSend(event) {
     form_checkbox_input.classList.add('field__input-invalid');
     circle_group_first.classList.add('hidden-elements');
     contact_form.classList.add('hidden-elements');
+    field_labels.forEach(field_label => field_label.classList.remove('field__label--mobile'));
     circle_fifth.classList.remove('circle-fifth--active');
     notification.classList.remove('hidden-elements');
     circle_group_second.classList.remove('hidden-elements');

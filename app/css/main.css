@@ -69,10 +69,10 @@ ul {
 
 .site-container__content {
   margin: 0 auto;
-  max-width: 1440px;
+  max-width: 100vw;
   position: relative;
   overflow: hidden;
-  height: 928px;
+  height: 100vh;
   background: rgba(45, 0, 223, 0.75);
   -webkit-backdrop-filter: blur(35px);
   backdrop-filter: blur(35px);
@@ -231,6 +231,9 @@ ul {
   .form__input-message--active {
     opacity: 1;
     transition: opacity 0.1s linear; }
+    @media (max-width: 670px) {
+      .form__input-message--active {
+        display: none; } }
 
 .form__input-info {
   position: absolute;
@@ -288,6 +291,10 @@ ul {
   .contact-form__consultant {
     display: flex;
     align-items: center; }
+    @media (max-width: 670px) {
+      .contact-form__consultant {
+        margin-left: 5%;
+        width: 90%; } }
     .contact-form__consultant-avatar {
       width: 126px;
       height: 122px;
@@ -305,6 +312,14 @@ ul {
       font-family: "SquadaOne-Regular";
       font-size: 46px;
       line-height: 49px; }
+      @media (max-width: 670px) {
+        .contact-form__consultant-info {
+          width: 50%; } }
+      @media (max-width: 480px) {
+        .contact-form__consultant-info {
+          margin-left: 10px;
+          font-size: 36px;
+          line-height: 40px; } }
       .contact-form__consultant-info span {
         color: #15ffff; }
   .contact-form__fields {
@@ -315,6 +330,10 @@ ul {
     position: relative;
     height: 68px;
     width: 560px; }
+    @media (max-width: 670px) {
+      .contact-form__field {
+        margin-left: 5%;
+        width: 90%; } }
     .contact-form__field:not(:last-child) {
       margin-bottom: 20px; }
   .contact-form__button {
@@ -366,6 +385,9 @@ ul {
   line-height: 36px;
   color: #15ffff;
   letter-spacing: 0.01em; }
+  @media (max-width: 670px) {
+    .field__label--mobile {
+      display: none; } }
   .field__label span {
     color: #ff56ff; }
 
@@ -385,6 +407,11 @@ ul {
   color: #fff;
   letter-spacing: 0.01em;
   transition: background-color 0.3s ease; }
+  @media (max-width: 670px) {
+    .field__input {
+      padding-left: 10%;
+      padding-right: 60px !important;
+      width: 100%; } }
   .field__input-valid ~ .field__input-icon--success {
     display: block; }
   .field__input-invalid ~ .field__input-icon--error {
@@ -421,6 +448,12 @@ ul {
   height: 168px;
   line-height: 27px;
   resize: none; }
+  @media (max-width: 670px) {
+    .field-question__input {
+      padding-left: 10%;
+      padding-right: 60px !important;
+      padding-top: 7%;
+      width: 100%; } }
 
 .form-checkbox {
   display: flex;
@@ -428,6 +461,10 @@ ul {
   justify-content: center;
   margin-top: 133px;
   height: 24px; }
+  @media (max-width: 670px) {
+    .form-checkbox {
+      margin-left: 5%;
+      width: 90%; } }
   .form-checkbox__label {
     position: relative;
     display: inline-flex;
@@ -501,6 +538,10 @@ ul {
   background-color: transparent;
   border: none;
   cursor: pointer; }
+  @media (max-width: 670px) {
+    .btn__close {
+      right: 15px;
+      top: 17px; } }
   .btn__close #btn__close:hover rect {
     fill: #ff56ff;
     transition: fill 0.2s ease; }
