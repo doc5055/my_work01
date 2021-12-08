@@ -346,12 +346,14 @@
     text-align: center;
     color: #667fff;
     transition: color 0.3s ease, background-color 0.3s ease, opacity 0.3s ease;
+    pointer-events: none;
 
     &--active {
       color: #fff;
       opacity: 1;
       transition: color 0.3s ease, opacity 0.3s ease;
       cursor: pointer;
+      pointer-events: auto;
 
       &:hover {
         color: #150fed;

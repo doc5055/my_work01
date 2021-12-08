@@ -348,12 +348,14 @@ ul {
     line-height: 39px;
     text-align: center;
     color: #667fff;
-    transition: color 0.3s ease, background-color 0.3s ease, opacity 0.3s ease; }
+    transition: color 0.3s ease, background-color 0.3s ease, opacity 0.3s ease;
+    pointer-events: none; }
     .contact-form__button--active {
       color: #fff;
       opacity: 1;
       transition: color 0.3s ease, opacity 0.3s ease;
-      cursor: pointer; }
+      cursor: pointer;
+      pointer-events: auto; }
       .contact-form__button--active:hover {
         color: #150fed;
         background-color: #15ffff;
