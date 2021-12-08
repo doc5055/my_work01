@@ -70,7 +70,6 @@ function contactFormSend(event) {
     form_checkbox_input.classList.add('field__input-invalid');
     circle_group_first.classList.add('hidden-elements');
     contact_form.classList.add('hidden-elements');
-
     circle_fifth.classList.remove('circle-fifth--active');
     notification.classList.remove('hidden-elements');
     circle_group_second.classList.remove('hidden-elements');
@@ -110,8 +109,13 @@ function fieldValidate (event){
         input.closest('.contact-form__field').removeChild(input.nextSibling);
       }
       formAddError(input);
-      const error = `<div class="form__input-message"><div class="form__input-info">Please input your email address in correct format. Use @ symbol in address.</div><div class="form__input-triangle01"></div></div>`;
-      input.insertAdjacentHTML('afterend', error);
+      var error01 = `<div class="form__input-message"><div class="form__input-info">Please input your email address in correct format. Use @ symbol in address.</div><div class="form__input-triangle01"></div></div>`;
+      var error02 = `<div class="form__input-message"><div class="form__input-info">Please input your email address in correct format.</div><div class="form__input-triangle01"></div></div>`;
+      if(!input.value.includes('@')){
+        input.insertAdjacentHTML('afterend', error01);
+      } else {
+        input.insertAdjacentHTML('afterend', error02);
+      }
     } else {
       formRemoveError(input);
       if(input.closest('.contact-form__field').querySelector('.form__input-message')){

@@ -268,9 +268,12 @@
       height: 122px;
       border-radius: 34px;
       box-shadow: 0px 5px #15ffff;
+      overflow: hidden;
 
       img {
+        object-fit:cover;
         height: 100%;
+        width: 100%;
       }
     }
 
@@ -288,6 +291,8 @@
   }
 
   &__fields {
+    display: flex;
+    flex-direction: column;
     margin-top: 56px;
   }
 
