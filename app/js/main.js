@@ -117,22 +117,7 @@ function fieldValidate(event) {
         input.closest('.contact-form__field').removeChild(input.nextSibling);
       }
     }
-  } // else if (input.type === 'email') {
-  //   if (!input.value.match(emailTest)){
-  //     if(input.closest('.contact-form__field').querySelector('.form__input-message')){
-  //       input.closest('.contact-form__field').removeChild(input.nextSibling);
-  //     }
-  //     formAddError(input);
-  //     const error = `<div class="form__input-message"><div class="form__input-info">Please input your email address in correct format. Use @ symbol in address.</div><div class="form__input-triangle01"></div></div>`;
-  //     input.insertAdjacentHTML('afterend', error);
-  //   } else {
-  //     formRemoveError(input);
-  //     if(input.closest('.contact-form__field').querySelector('.form__input-message')){
-  //       input.closest('.contact-form__field').removeChild(input.nextSibling);
-  //     }
-  //   }
-  // }
-  else if (input.type === 'textarea') {
+  } else if (input.type === 'textarea') {
     if (!input.value.match(questionTest)) {
       if (input.closest('.contact-form__field').querySelector('.form__input-message')) {
         input.closest('.contact-form__field').removeChild(input.nextSibling);
