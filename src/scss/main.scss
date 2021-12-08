@@ -196,12 +196,18 @@
     opacity: 0;
     transition: opacity 0.1s linear;
 
+    // @include sm-max {
+    //   padding-right: 10% !important;
+    //   margin-right: 20px !important;
+    //   padding-bottom: 250px !important;
+    // }
+
     &--active {
       opacity: 1;
       transition: opacity 0.1s linear;
 
-      @include sm-min {
-        display: none;
+      @include sm-max {
+        display: none !important;
       }
     }
   }

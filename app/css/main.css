@@ -231,9 +231,9 @@ ul {
   .form__input-message--active {
     opacity: 1;
     transition: opacity 0.1s linear; }
-    @media (max-width: 670px) {
+    @media (max-width: 840px) {
       .form__input-message--active {
-        display: none; } }
+        display: none !important; } }
 
 .form__input-info {
   position: absolute;
