@@ -32,9 +32,9 @@ ul {
   left: -9999px !important;
 }
 
-.site-container {
-  overflow: hidden;
-}
+// .site-container {
+//   overflow: hidden;
+// }
 
 .is-hidden {
   display: none !important;
@@ -48,12 +48,6 @@ ul {
   border: none;
   background: transparent;
   cursor: pointer;
-}
-
-.site-container__content {
-  margin: 0 auto;
-  padding: 0 440px;
-  max-width: 1440px;
 }
 
 .js-focus-visible :focus:not(.focus-visible) {

@@ -25,9 +25,6 @@ ul {
   position: relative !important;
   left: -9999px !important; }
 
-.site-container {
-  overflow: hidden; }
-
 .is-hidden {
   display: none !important; }
 
@@ -38,11 +35,6 @@ ul {
   border: none;
   background: transparent;
   cursor: pointer; }
-
-.site-container__content {
-  margin: 0 auto;
-  padding: 0 440px;
-  max-width: 1440px; }
 
 .js-focus-visible :focus:not(.focus-visible) {
   outline: none; }
@@ -75,17 +67,25 @@ ul {
   font-style: normal;
   font-display: swap; }
 
-.site-container__contact-form {
-  height: 928px; }
-
 .site-container__content {
+  margin: 0 auto;
+  max-width: 1440px;
   position: relative;
   overflow: hidden;
-  height: 100%;
-  background-image: url("../img/Rectangle 279.png");
-  background-position: center;
-  background-size: cover;
-  background-repeat: no-repeat; }
+  height: 928px;
+  background: rgba(45, 0, 223, 0.75);
+  -webkit-backdrop-filter: blur(35px);
+  backdrop-filter: blur(35px);
+  background-image: url("../img/Red circle.png");
+  background-position: top left;
+  background-repeat: no-repeat;
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  transition: background-image 0.5s ease; }
+  .site-container__content--second {
+    background-image: none !important;
+    transition: background-image 0.5s ease; }
 
 .circle-first {
   position: absolute;
@@ -122,8 +122,6 @@ ul {
 
 .circle-fourth {
   position: absolute;
-  left: 21.8%;
-  top: 6.3%;
   z-index: 5;
   border-radius: 50%;
   width: 813.46px;
@@ -134,8 +132,6 @@ ul {
 
 .circle-fifth {
   position: absolute;
-  left: 12.5%;
-  top: -8.2%;
   z-index: 4;
   border-radius: 50%;
   width: 1082.59px;
@@ -149,8 +145,6 @@ ul {
 
 .circle-sixth {
   position: absolute;
-  left: 2.9%;
-  top: -23%;
   z-index: 3;
   border-radius: 50%;
   width: 1359px;
@@ -160,22 +154,33 @@ ul {
   transition: opacity 0.5s ease; }
 
 .circle__group-first {
+  display: none;
   transition: opacity 0.5s ease; }
 
 .circle__group-second {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translateY(-50%), translateY(-50%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 3;
   transition: opacity 0.5s ease; }
 
 .hidden-elements {
+  z-index: 0 !important;
   opacity: 0;
   transition: opacity 0.5s ease; }
 
 .notification {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
   position: absolute;
   top: 33%;
-  left: 30.6%;
   z-index: 7; }
-  .notification__icon {
-    margin-left: 41.5%; }
   .notification__message {
     margin-top: 28px;
     color: #fff;
@@ -186,7 +191,6 @@ ul {
     .notification__message span {
       color: #15ffff; }
   .notification__button {
-    margin-left: 35%;
     margin-top: 43px;
     padding-top: 9px;
     width: 168px;
@@ -278,9 +282,8 @@ ul {
       color: #15ffff; }
 
 .contact-form {
-  position: absolute;
-  top: 100px;
   z-index: 6;
+  margin-top: 100px;
   transition: opacity 0.5s ease; }
   .contact-form__consultant {
     display: flex;
@@ -309,7 +312,6 @@ ul {
     .contact-form__field:not(:last-child) {
       margin-bottom: 20px; }
   .contact-form__button {
-    margin-left: 33%;
     margin-top: 48px;
     width: 190px;
     height: 65px;

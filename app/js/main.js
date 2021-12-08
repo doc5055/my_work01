@@ -7,6 +7,8 @@ var notification_button = document.querySelector('.notification__button');
 var contact_form_button = document.querySelector('.contact-form__button');
 var form_checkbox_input = document.querySelector('.form-checkbox__input');
 var circle_fifth = document.querySelector('.circle-fifth');
+var notification = document.querySelector('.notification');
+var site_container_content = document.querySelector('.site-container__content');
 var contact_form_inputs = contact_form.querySelectorAll('.form__input-required');
 contact_form_inputs.forEach(function (input_form) {
   input_form.addEventListener('change', fieldValidate);
@@ -31,9 +33,11 @@ contact_form.addEventListener('keyup', contactFormBtn);
 function startForm(event) {
   circle_fifth.classList.add('circle-fifth--active');
   setTimeout(function () {
+    notification.classList.add('hidden-elements');
     circle_group_second.classList.add('hidden-elements');
     contact_form.classList.remove('hidden-elements');
     circle_group_first.classList.remove('hidden-elements');
+    site_container_content.classList.remove('site-container__content--second');
   }, 1500);
 }
 
@@ -59,10 +63,12 @@ function contactFormSend(event) {
     });
     form_checkbox_input.classList.add('field__input-invalid');
     circle_group_first.classList.add('hidden-elements');
-    circle_fifth.classList.remove('circle-fifth--active');
     contact_form.classList.add('hidden-elements');
+    circle_fifth.classList.remove('circle-fifth--active');
+    notification.classList.remove('hidden-elements');
     circle_group_second.classList.remove('hidden-elements');
     contact_form_button.classList.remove('contact-form__button--active');
+    site_container_content.classList.add('site-container__content--second');
   }
 }
 
