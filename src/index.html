@@ -11,13 +11,15 @@
 </head>
 <body>
   <div class="site-container">
-    <main class="main">
-      <div class="container">
+    <div class="site-container__contact-form">
+      <div class="site-container__content">
+
         <div class="circle circle__group-first">
           <div class="circle-first"></div>
           <div class="circle-second"></div>
           <div class="circle-third"></div>
         </div>
+
         <div class="circle circle__group-second hidden-elements">
           <div class="circle-fourth"></div>
           <div class="circle-fifth"></div>
@@ -25,22 +27,21 @@
           <div class="notification">
             <svg width="96" height="97" class="notification__icon" viewBox="0 0 96 97" fill="none" xmlns="http://www.w3.org/2000/svg">
               <path d="M2.33919 28.9368L91.6365 0.610663C94.083 -0.165416 96.4047 1.97922 95.9403 4.42024L95.8547 4.77069L69.2273 93.9233C68.5474 96.1999 65.8213 97.0292 64.0011 95.6394L63.6899 95.371L46.2014 78.3954L28.9293 95.76C26.9134 97.7867 23.5209 96.5066 23.2296 93.7735L23.2095 93.392L23.2088 70.649C23.2087 68.7962 24.7078 67.2942 26.5569 67.2941C28.274 67.2941 29.6892 68.5891 29.8827 70.2575L29.9053 70.6488L29.9057 85.2736L43.7886 71.3164C44.9815 70.1171 46.8576 70.0091 48.1733 71.0035L48.4899 71.275L64.3917 86.7105L87.6254 8.92069L9.70942 33.6365L27.1239 50.5352L61.0914 25.3991C62.4644 24.383 64.3563 24.5739 65.5034 25.7814L65.7739 26.1044C66.7881 27.48 66.5976 29.3756 65.3924 30.5249L65.07 30.7959L29.047 57.4558C28.3081 58.0027 27.4188 58.2 26.5762 58.0773L26.1597 57.9894C25.5982 57.9217 25.0488 57.7119 24.5709 57.3583L24.2268 57.0662L1.0203 34.5447C-0.699208 32.8759 -0.149775 30.0409 1.95227 29.0853L2.33919 28.9368L91.6365 0.610663L2.33919 28.9368Z" fill="white"/>
-              </svg>
+            </svg>
             <div class="notification__message">Your message to <span>Katie</span> was sent!</div>
             <div class="notification__button">Ok</div>
           </div>
         </div>
+
         <a href="#" class="logo" aria-label="logo">
-          <!-- <svg width="33" height="20" id="btn__logo" viewBox="0 0 33 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M0 0L16.1305 19.8592L25.2039 8.68838L20.0422 15.0599C19.155 14.3151 18.5501 13.1567 18.5501 11.8741C18.5501 9.59859 20.3648 7.7368 22.5827 7.7368C23.5909 7.7368 24.4781 8.10915 25.2039 8.72975L32.261 0H0Z" fill="#15FFFF"/>
-          </svg> -->
           <svg width="33" height="28" id="btn__logo" viewBox="0 0 33 28" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path d="M6.04895 23.1605V27.2979H26.2121V23.1605H6.04895Z" fill="#FF44D6"/>
             <path d="M0 0L16.1305 19.8592L25.2039 8.68838L20.0422 15.0599C19.155 14.3151 18.5501 13.1567 18.5501 11.8741C18.5501 9.59859 20.3648 7.7368 22.5827 7.7368C23.5909 7.7368 24.4781 8.10915 25.2039 8.72975L32.261 0H0Z" fill="#15FFFF"/>
             <path d="M25.2039 8.68848L20.0422 15.06C20.7277 15.6392 21.6149 16.0115 22.5827 16.0115C24.8007 16.0115 26.6154 14.1497 26.6154 11.8742C26.6154 10.5916 26.0508 9.47457 25.2039 8.68848Z" fill="#15FFFF"/>
-            </svg>
+          </svg>
           <div class="logo-info">After Work<span>Casino</span></div>
         </a>
+
         <form action="#" class="contact__form contact-form" novalidate>
           <div class="contact-form__consultant">
             <div class="contact-form__consultant-avatar">
@@ -103,7 +104,8 @@
           </div>
           <button type="submit" class="contact-form__button btn-reset">Send</button>
         </form>
-        <button class="btn__close" aria-label="Button close">
+
+        <button class="btn__close btn-reset" aria-label="Button close">
           <svg width="74" height="74" id="btn__close" viewBox="0 0 74 74" fill="none" xmlns="http://www.w3.org/2000/svg">
             <g filter="url(#filter0_d_1_2124)">
             <rect x="15" y="15" width="44" height="44" rx="14" fill="#3C40FF"/>
@@ -123,8 +125,9 @@
             </defs>
           </svg>
         </button>
+
       </div>
-    </main>
+    </div>
   </div>
   <script src="js/vendor.js"></script>
   <script src="js/main.js"></script>

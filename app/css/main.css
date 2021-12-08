@@ -39,7 +39,7 @@ ul {
   background: transparent;
   cursor: pointer; }
 
-.container {
+.site-container__content {
   margin: 0 auto;
   padding: 0 440px;
   max-width: 1440px; }
@@ -75,10 +75,10 @@ ul {
   font-style: normal;
   font-display: swap; }
 
-.main {
+.site-container__contact-form {
   height: 928px; }
 
-.container {
+.site-container__content {
   position: relative;
   overflow: hidden;
   height: 100%;
@@ -129,7 +129,8 @@ ul {
   width: 813.46px;
   height: 813.46px;
   background: linear-gradient(180deg, rgba(21, 44, 255, 0.99) 48.44%, rgba(211, 97, 230, 0.65) 100%);
-  opacity: 0.8; }
+  opacity: 0.8;
+  transition: opacity 0.5s ease; }
 
 .circle-fifth {
   position: absolute;
@@ -140,7 +141,11 @@ ul {
   width: 1082.59px;
   height: 1082.59px;
   background: #ff44d6;
-  opacity: 0.3; }
+  opacity: 0.3;
+  transition: opacity 0.5s ease; }
+  .circle-fifth--active {
+    opacity: 0.6 !important;
+    transition: opacity 1s ease; }
 
 .circle-sixth {
   position: absolute;
@@ -151,7 +156,8 @@ ul {
   width: 1359px;
   height: 1359px;
   background: #ff55ee;
-  opacity: 0.2; }
+  opacity: 0.2;
+  transition: opacity 0.5s ease; }
 
 .circle__group-first {
   transition: opacity 0.5s ease; }
@@ -190,29 +196,37 @@ ul {
     font-family: "Catamaran-ExtraBold";
     font-size: 25px;
     text-align: center;
-    color: #667fff;
+    color: #fff;
     transition: color 0.3s ease, background-color 0.3s ease, opacity 0.3s ease;
     cursor: pointer; }
     .notification__button:hover {
-      color: #fff;
+      color: #150fed;
+      background-color: #15ffff;
       opacity: 1;
-      transition: color 0.3s ease, opacity 0.3s ease; }
+      transition: color 0.3s ease, background-color 0.3s ease, opacity 0.3s ease;
+      cursor: pointer; }
     .notification__button:active {
       color: #150fed;
       background-color: #15ffff;
       opacity: 1;
-      transition: color 0.3s ease, background-color 0.3s ease, opacity 0.3s ease; }
+      transition: color 0.3s ease, background-color 0.3s ease, opacity 0.3s ease;
+      cursor: pointer; }
     .notification__button:focus {
       outline: none;
-      color: #fff;
+      color: #150fed;
+      background-color: #15ffff;
       opacity: 1;
-      transition: color 0.3s ease, opacity 0.3s ease; }
+      transition: color 0.3s ease, background-color 0.3s ease, opacity 0.3s ease;
+      cursor: pointer; }
 
 .form__input-message {
   z-index: 12 !important;
+  padding-bottom: 200px;
   opacity: 0;
-  transition: opacity 0.1s linear;
-  padding-bottom: 200px; }
+  transition: opacity 0.1s linear; }
+  .form__input-message--active {
+    opacity: 1;
+    transition: opacity 0.1s linear; }
 
 .form__input-info {
   position: absolute;
@@ -266,7 +280,8 @@ ul {
 .contact-form {
   position: absolute;
   top: 100px;
-  z-index: 6; }
+  z-index: 6;
+  transition: opacity 0.5s ease; }
   .contact-form__consultant {
     display: flex;
     align-items: center; }
@@ -307,23 +322,30 @@ ul {
     text-align: center;
     color: #667fff;
     transition: color 0.3s ease, background-color 0.3s ease, opacity 0.3s ease; }
-    .contact-form__button:hover {
+    .contact-form__button--active {
       color: #fff;
       opacity: 1;
       transition: color 0.3s ease, opacity 0.3s ease;
       cursor: pointer; }
-    .contact-form__button:active {
-      color: #150fed;
-      background-color: #15ffff;
-      opacity: 1;
-      transition: color 0.3s ease, background-color 0.3s ease, opacity 0.3s ease;
-      cursor: pointer; }
-    .contact-form__button:focus {
-      outline: none;
-      color: #fff;
-      opacity: 1;
-      transition: color 0.3s ease, opacity 0.3s ease;
-      cursor: pointer; }
+      .contact-form__button--active:hover {
+        color: #150fed;
+        background-color: #15ffff;
+        opacity: 1;
+        transition: color 0.3s ease, background-color 0.3s ease, opacity 0.3s ease;
+        cursor: pointer; }
+      .contact-form__button--active:active {
+        color: #150fed;
+        background-color: #15ffff;
+        opacity: 1;
+        transition: color 0.3s ease, background-color 0.3s ease, opacity 0.3s ease;
+        cursor: pointer; }
+      .contact-form__button--active:focus {
+        outline: none;
+        color: #150fed;
+        background-color: #15ffff;
+        opacity: 1;
+        transition: color 0.3s ease, background-color 0.3s ease, opacity 0.3s ease;
+        cursor: pointer; }
 
 .field__label {
   position: absolute;
@@ -363,8 +385,6 @@ ul {
     color: #ff15f5 !important;
     background-color: #872ad9 !important;
     transition: color 0.3s ease, background-color 0.3s ease; }
-    .field__input-invalid:hover ~ .form__input-message {
-      opacity: 1 !important; }
   .field__input:hover {
     background-color: #494dff;
     transition: background-color 0.3s ease; }
@@ -383,7 +403,8 @@ ul {
     right: 22px;
     top: 22px;
     z-index: 7;
-    display: none; }
+    display: none;
+    cursor: pointer; }
 
 .field-question__input {
   padding-left: 5%;
@@ -472,14 +493,17 @@ ul {
   background-color: transparent;
   border: none;
   cursor: pointer; }
-  .btn__close:hover > #btn__close rect:hover {
+  .btn__close #btn__close:hover rect {
     fill: #ff56ff;
     transition: fill 0.2s ease; }
-  .btn__close:active > #btn__close rect:hover {
+  .btn__close #btn__close:active rect {
     fill: #ff56ff;
     transition: fill 0.2s ease; }
   .btn__close:focus {
-    outline: 1px dotted #ff56ff; }
+    outline: none; }
+    .btn__close:focus rect {
+      fill: #ff56ff !important;
+      transition: fill 0.2s ease; }
 
 #btn__close {
   margin-top: -16px;

@@ -2,10 +2,9 @@ const contact_form = document.querySelector('.contact__form');
 const circle_group_first = document.querySelector('.circle__group-first');
 const circle_group_second = document.querySelector('.circle__group-second');
 const notification_button = document.querySelector('.notification__button');
-
-notification_button.addEventListener('click', startForm);
-
-contact_form.addEventListener('submit', contactFormSend);
+const contact_form_button = document.querySelector('.contact-form__button');
+const form_checkbox_input = document.querySelector('.form-checkbox__input');
+const circle_fifth = document.querySelector('.circle-fifth');
 
 const contact_form_inputs = contact_form.querySelectorAll('.form__input-required');
 
@@ -15,10 +14,44 @@ contact_form_inputs.forEach(input_form => {
   input_form.addEventListener('keyup', fieldValidate);
 })
 
+const icon_errors = document.querySelectorAll('.field__input-icon--error').forEach(icon_error => {
+  icon_error.addEventListener('mouseover', function(e){
+    const input_message = icon_error.closest('.contact-form__field').querySelector('.form__input-message');
+    input_message.classList.add('form__input-message--active');
+  })
+
+  icon_error.addEventListener('mouseout', function(e){
+    const input_message = icon_error.closest('.contact-form__field').querySelector('.form__input-message');
+    input_message.classList.remove('form__input-message--active');
+  })
+});
+
+notification_button.addEventListener('click', startForm);
+
+contact_form.addEventListener('submit', contactFormSend);
+
+contact_form.addEventListener('change', contactFormBtn);
+contact_form.addEventListener('keyup', contactFormBtn);
+
 function startForm (event) {
-  circle_group_second.classList.add('hidden-elements');
-  contact_form.classList.remove('hidden-elements');
-  circle_group_first.classList.remove('hidden-elements');
+  circle_fifth.classList.add('circle-fifth--active');
+  setTimeout(() => {
+    circle_group_second.classList.add('hidden-elements');
+    contact_form.classList.remove('hidden-elements');
+    circle_group_first.classList.remove('hidden-elements');
+  }, 1500)
+}
+
+function contactFormBtn(event) {
+  event.preventDefault();
+
+  let error = formValidate(contact_form);
+
+  if(error === 0) {
+    contact_form_button.classList.add('contact-form__button--active');
+  } else {
+    contact_form_button.classList.remove('contact-form__button--active');
+  }
 }
 
 function contactFormSend(event) {
@@ -29,19 +62,21 @@ function contactFormSend(event) {
   if (error === 0) {
     contact_form.reset();
     contact_form.querySelectorAll('.form__input-required').forEach(input => input.classList.remove('field__input-valid'));
+    form_checkbox_input.classList.add('field__input-invalid');
     circle_group_first.classList.add('hidden-elements');
+    circle_fifth.classList.remove('circle-fifth--active');
     contact_form.classList.add('hidden-elements');
     circle_group_second.classList.remove('hidden-elements');
+    contact_form_button.classList.remove('contact-form__button--active');
   }
 }
 
 function fieldValidate (event){
   const input = event.currentTarget;
 
-  console.log(input, '4')
-  const userNameTest = /^[a-zA-Z0-9_-]{3,16}$/;
+  const userNameTest = /^[a-zA-ZА-Яа-я0-9_-]{3,20}$/;
   const emailTest = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,8})+$/;
-  const questionTest = /^[a-zA-Z0-9_-\s!$()*+.,<>?[\]^{|}]{7,200}$/;
+  const questionTest = /^[a-zA-ZА-Яа-я0-9_-\s@&%#"'=!$()*+.,<>?[\]^{|}]{5,200}$/;
 
   formRemoveError(input);
 
@@ -51,7 +86,7 @@ function fieldValidate (event){
         input.closest('.contact-form__field').removeChild(input.nextSibling);
       }
       formAddError(input);
-      const error = `<div class="form__input-message"><div class="form__input-info">Please input your email address in correct format.</div><div class="form__input-triangle01"></div></div>`;
+      const error = `<div class="form__input-message"><div class="form__input-info">Please input your name in correct format. Use from 3 to 20 characters.</div><div class="form__input-triangle01"></div></div>`;
       input.insertAdjacentHTML('afterend', error);
     } else {
       formRemoveError(input);
@@ -83,7 +118,7 @@ function fieldValidate (event){
         input.closest('.contact-form__field').removeChild(input.nextSibling);
       }
       formAddError(input);
-      const error = `<div class="form__input-message"><div class="form__input-info">Please input your question in correct format.</div><div class="form__input-triangle01"></div><div class="form__input-triangle01"></div></div>`;
+      const error = `<div class="form__input-message"><div class="form__input-info">Please input your question in correct format. Use from 5 to 200 characters.</div><div class="form__input-triangle01"></div><div class="form__input-triangle01"></div></div>`;
       input.insertAdjacentHTML('afterend', error);
     } else {
       formRemoveError(input);
@@ -97,7 +132,6 @@ function fieldValidate (event){
     if (!input.checked){
       formAddError(input);
     } else {
-      console.log('NO!')
       formRemoveError(input);
     }
   }
@@ -106,8 +140,6 @@ function fieldValidate (event){
 function formValidate(form) {
   let error = 0;
   let formFields = form.querySelectorAll('.form__input-required');
-
-  console.log(formFields, '5')
 
   formFields.forEach(input => {
     if (input.classList.contains('field__input-invalid') || input.value === '') {
