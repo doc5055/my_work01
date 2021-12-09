@@ -25,6 +25,10 @@
     background-image: none !important;
     transition: background-image 0.5s ease;
   }
+
+  @include sm-max {
+    overflow-y: scroll;
+  }
 }
 
 .circle {
@@ -195,12 +199,6 @@
     padding-bottom: 200px;
     opacity: 0;
     transition: opacity 0.1s linear;
-
-    // @include sm-max {
-    //   padding-right: 10% !important;
-    //   margin-right: 20px !important;
-    //   padding-bottom: 250px !important;
-    // }
 
     &--active {
       opacity: 1;
